@@ -66,7 +66,8 @@ class VkAuthController extends Controller
         $oauthClient->setReturnUrl(Yii::$app->request->hostInfo .
                 $hashConfig['authClientCollection']['clients']['vkontakte']['returnUri']);
 
-        $oauthClient->scope = 'offline,ads';
+        // Разрешает бессрочный доступ к API
+        $oauthClient->scope = 'offline';
 
         $arrAdditionalQueryParameters = ['display' => 'mobile'];
 
